@@ -25,3 +25,7 @@ For 2 dimensional designs, works well with Flex (they even share `align|justify-
 * http://flexboxfroggy.com/
 * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+## Transform
+* Still mostly experimental (at the time of writing this)
+* Applies on 'tranformable' elements which are block or inline block elements.
+* For an annotated example check out [this](https://github.com/spygi/cv-app/commit/47c2276abcfc74ee9d6db3c77b40077ff58e8a94)
