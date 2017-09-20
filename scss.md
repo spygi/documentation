@@ -20,6 +20,7 @@ For 2 dimensional designs, works well with Flex (they even share `align|justify-
 ## Flexbox
 * http://flexboxfroggy.com/
 * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+* https://codepen.io/justd/pen/yydezN/
 
 ## Transform
 * Still mostly experimental (at the time of writing this)
