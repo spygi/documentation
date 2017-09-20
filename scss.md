@@ -4,8 +4,11 @@ Some remarks:
     * Child vs Descendant: children are direct descendants (like in graph theory). Children are selected with `>` while any descendant with ` `.
     * Selecting an element based on 2 (or more) classes, attr etc: `.hello.world { }` for a `<div class="hello world"/>`.
     * CSS3: ':hover' is a pseudo-class vs '::after' which is a pseudo-element. Pseudo-classes can be used for state (active, checked etc), to react to user actions (hover, focus etc), to access directly elements of lists (first-of.., nth-of etc.) or validate stuff (). Some useful pseudo-elements are first-letter, first-line and selection (can't find a good use case for after or before...)
+* References
+    * Canisue
+    * Css-tricks
 
-## Sass
+## SASS/SCSS
 * [https://hugogiraudel.com/2013/07/15/understanding-sass-lists/](Sass lists)
 
 ## CSS Grid
@@ -20,7 +23,7 @@ For 2 dimensional designs, works well with Flex (they even share `align|justify-
 * [Grid garden game](http://cssgridgarden.com/): not a complete reference but OK for a start
 * [Rachel Andrew's grid by example](https://gridbyexample.com/) and [cheatsheet for box alignment grid-flexbox](https://rachelandrew.co.uk/css/cheatsheets/box-alignment)
 
-## Flexbox
+## CSS Flexbox
 * http://flexboxfroggy.com/
 * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 * https://codepen.io/justd/pen/yydezN/
