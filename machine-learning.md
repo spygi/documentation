@@ -7,8 +7,8 @@ Notes from the Coursera course:
 where the output is descrete values.
 * Linear regression problems are those where data fits a linear function. Cost function is the average of the squared errors. 
 The goal is to find the θs that minimize the cost function. 
-* A way to do this is with gradient decent: you start from 2 values for θs and update them *simultaneously* until converging,
-using the gradient of the cost function - essentially a "backtracking" algo. 
+* A way to do this is with *gradient decent*: you start from 2 values for θs and update them *simultaneously* until converging, using the gradient of the cost function - essentially a "backtracking" algo. 
+** You can also compute θs analytically with a complexity of O(n^3)
 * a is the learning rate: too big and there is no convergence. Too small and the convergence is too slow. Even with fixed rate
 due to the convex nature of linear regression cost function, you get a smaller gradient therefore a smaller step.
 * Depending on the initial values you might end up in a local minimum instead of the global one. Once you find a minimum (where the slope of the cost function is 0) gradient descent 
