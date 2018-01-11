@@ -17,3 +17,5 @@ a -> {
 }
 ```
 * intermediate vs terminal operations
+
+[Cheat sheet](http://files.zeroturnaround.com/pdf/zt_java8_streams_cheat_sheet.pdf)
