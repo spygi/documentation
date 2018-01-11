@@ -19,3 +19,5 @@ a -> {
 * intermediate vs terminal operations
 
 [Cheat sheet](http://files.zeroturnaround.com/pdf/zt_java8_streams_cheat_sheet.pdf)
+https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description
+http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
