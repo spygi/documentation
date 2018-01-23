@@ -33,10 +33,11 @@ Q: When you act on features I guess you have to adjust the values of θs at the 
 
 ## Classification problems
 Like a linear regression problem but the parameter to be predicted can take only a few, discrete values 
-* Binary classification problem is a yes/no problem: "Is a mail spam or not?". We map one case (positive) as 1 and the other as 0.
+* **Binary classification problem** is a yes/no problem: "Is a mail spam or not?". We map one case (positive) as 1 and the other as 0.
 * We use the **sigmoid** (or logistic hence **logistic regression**) function: ```hθ(x)=g(θTx)``` where ```z=θ^T*x```. This function is capped between 0, 1. * hθ(x) will give us the probability that our output is 1, therefore 1 - hθ(x) gives us the probability of being 0.
 * Solving the sigmoid or hypothesis function we can create the decision boundary: the line that separates the area where y = 0 and where y = 1.
 * If we were to use the cost function from linear regression (replacing the linear function for the sigmoid) we would end up with a non-convex function (i.e. with many local minimum): convergence is not guaranteed.
 * Instead we use a different log function as the cost function, which is derived from maximum likelihood estimation calculation (plus it's convex which is a good property).
 * We can use the same gradient decent for this cost function, which gives us something similar to linear regression.
-
+* **Multi-class classification**: can be modelled as a set (according to the number of classes) of one-vs-all binary classifiers. When we have a new problem we run all classifiers and choose the one that gives the highest probability (i.e. is the most confident)
+** Is not to be confused with multi-label (when multiple labels are assigned on an item). Q: what is the relationship with clustering problems?
