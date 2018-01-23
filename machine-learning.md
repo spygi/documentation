@@ -10,6 +10,7 @@ Notes from the Coursera course:
 * Linear regression problems are those where data fits a linear function. The cost function is the average of the squared errors. The goal of linear regression is to find the θs that minimize the cost function. 
 * A way to do this is with **gradient decent**: you start from 2 values for θs and update them *simultaneously* until converging, using the gradient of the cost function - essentially a "backtracking" algo. 
 * Another way to do this is by computing θs analytically but that has a complexity of O(n^3).
+* Other more advanced methods are conjugate gradient, BFGS and L-BFGS for which you don't have to find an "a" and that can be  faster but also more complicated than gradient decent. 
 
 
 ### Gradient Decent
@@ -31,10 +32,11 @@ Q: When you act on features I guess you have to adjust the values of θs at the 
 
 
 ## Classification problems
-Like a regression problem but the parameter to be predicted can take only a few, discrete values 
+Like a linear regression problem but the parameter to be predicted can take only a few, discrete values 
 * Binary classification problem is a yes/no problem: "Is a mail spam or not?". We map one case (positive) as 1 and the other as 0.
-* We use the **sigmoid** (or logistic) function: ```hθ(x)=g(θTx)``` where ```z=θ^T*x```. This function is capped between 0, 1. * hθ(x) will give us the probability that our output is 1, therefore 1 - hθ(x) gives us the probability of being 0.
+* We use the **sigmoid** (or logistic hence **logistic regression**) function: ```hθ(x)=g(θTx)``` where ```z=θ^T*x```. This function is capped between 0, 1. * hθ(x) will give us the probability that our output is 1, therefore 1 - hθ(x) gives us the probability of being 0.
 * Solving the sigmoid or hypothesis function we can create the decision boundary: the line that separates the area where y = 0 and where y = 1.
 * If we were to use the cost function from linear regression (replacing the linear function for the sigmoid) we would end up with a non-convex function (i.e. with many local minimum): convergence is not guaranteed.
-* Instead we use a different log function as the cost function, hence **logistic regression**. This function is derived from maximum likelihood estimation calculation (plus it's convex which is good).
+* Instead we use a different log function as the cost function, which is derived from maximum likelihood estimation calculation (plus it's convex which is a good property).
+* We can use the same gradient decent for this cost function, which gives us something similar to linear regression.
 
