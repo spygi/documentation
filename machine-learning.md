@@ -36,4 +36,5 @@ Like a regression problem but the parameter to be predicted can take only a few,
 * We use the **sigmoid** (or logistic) function: ```hθ(x)=g(θTx)``` where ```z=θ^T*x```. This function is capped between 0, 1. * hθ(x) will give us the probability that our output is 1, therefore 1 - hθ(x) gives us the probability of being 0.
 * Solving the sigmoid or hypothesis function we can create the decision boundary: the line that separates the area where y = 0 and where y = 1.
 * If we were to use the cost function from linear regression (replacing the linear function for the sigmoid) we would end up with a non-convex function (i.e. with many local minimum): convergence is not guaranteed.
-* Instead we use a different log function.
+* Instead we use a different log function as the cost function, hence **logistic regression**. This function is derived from maximum likelihood estimation calculation (plus it's convex which is good).
+
