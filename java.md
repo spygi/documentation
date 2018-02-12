@@ -56,10 +56,7 @@ A consequence is: : final List: allows modifying elements but compile-time error
 Multi-threading
 [http://www.ibm.com/developerworks/library/j-5things15/ Nice resource]
 
-Volatile keyword, [http://www.javamex.com/tutorials/synchronization_volatile.shtml from this:] : The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory"; : Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself. :: Difference with synchronised is that you can't have dead locks and volatile is allowed only on variables : A side effect is that operations on longs and doubles are atomic ``` myVolatile++; not thread safe ```
-java.util.concurrent.atomic
-Synchronised: method or <pre>{block(variable)}</pre> : A pattern I've read is: <pre> class Hello { static Hello instanceOfHello = ...; synchronised (instanceOfHello) { ... } </pre> : [http://www.ibm.com/developerworks/library/j-5things15/ This claims synchronized methods are more efficient than blocks]
-ThreadLocal
+
 Interview Questions
 [http://norvig.com/java-iaq.html iaq]
 [http://www.allapplabs.com/interview_questions/java_interview_questions.htm#q3 interview questions]
@@ -87,9 +84,15 @@ Jersey
 
 
 ## Concurrency
-* Concurrency (many things at once) vs Parallelism (improve performance of one thing)
++ Concurrency (many things at once) vs Parallelism (improve performance of one thing)
++ Visibility and Atomicity: locking can guarantee both while volatile variables only visibility.
 ** Threads (by extending Thread or Thread(Runnable)) & ExecutorService vs ForkJoinPool & Parallel Streams
 * Thread safety: volatile, synchronized, AtomicReferenceFieldUpdater->VarHandles (in Java 9, [example from Java Specialists]())
+
++ Volatile keyword, [http://www.javamex.com/tutorials/synchronization_volatile.shtml from this:] : The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory"; : Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself. :: Difference with synchronised is that you can't have dead locks and volatile is allowed only on variables : A side effect is that operations on longs and doubles are atomic ``` myVolatile++; not thread safe ```
++ java.util.concurrent.atomic
+Synchronised: method or <pre>{block(variable)}</pre> : A pattern I've read is: <pre> class Hello { static Hello instanceOfHello = ...; synchronised (instanceOfHello) { ... } </pre> : [http://www.ibm.com/developerworks/library/j-5things15/ This claims synchronized methods are more efficient than blocks]
++ ThreadLocal is in a sense the opposite of volatile
 
 ## Streams
 ** @FunctionalInterface annotation (interface with only one abstract method - excluding those inhereted by Object), 
