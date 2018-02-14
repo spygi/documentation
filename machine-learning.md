@@ -41,3 +41,6 @@ Like a linear regression problem but the parameter to be predicted can take only
 * We can use the same gradient decent for this cost function, which gives us something similar to linear regression.
 * **Multi-class classification**: can be modelled as a set (according to the number of classes) of one-vs-all binary classifiers. When we have a new problem we run all classifiers and choose the one that gives the highest probability (i.e. is the most confident)
 ** Is not to be confused with multi-label (when multiple labels are assigned on an item). Q: what is the relationship with clustering problems?
+
+## Resources 
+http://scikit-learn.org/stable/_static/ml_map.png
