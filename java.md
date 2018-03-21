@@ -71,3 +71,5 @@ JRE is to run Java programs, the runtime, the java applet. What the end-user nee
 The JDK is what you need to write programs in java, provides the javac compiler and java command, it's part of the SDK.
 The SDK contains besides the JDK also an application server (eg Tomcat) plus other stuff to program in Java.
 [http://www.devsniper.com/ubuntu-12-04-install-sun-jdk-6-7/ the guide I used in Doodle while in Ubuntu]
+
+Java 9 features: https://www.pluralsight.com/blog/software-development/java-9-new-features
