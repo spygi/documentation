@@ -1,4 +1,22 @@
 ## Algorithms
+### Design techniques
+From CtCI:  
+- Examplify: write specific examples of the problem and derive a general rule
+- Pattern matching: a variation of a known algo 
+- Simplify and generalize (?)
+- Base case and build: start from n = 1 and build next solutions from it. Good for recursive or dynamic problems ("find all permutations" etc).
+- Brainstorm: with data structures or algorithms (if you know already the desired complexity of the solution)
+
+TODO: gather also from chapter 11 of Algorithms in a nutshell
+
+#### Tips
++ Consider sorting arrays firstin the beginning.
++ Time vs space tradeoff: you can improve time by using up more space and vice versa.
++ [Recursive solutions can be expressed iteratively](https://stackoverflow.com/questions/2093618/can-all-iterative-algorithms-be-expressed-recursively) and vice versa: if <-> while
++ Runner up pointer technique, for example in palindromes, rotated lists, segregating arrays
++ Parallelism: https://github.com/heineman/algorithms-nutshell-2ed/blob/master/JavaCode/src/algs/model/array/MultiThreadQuickSort.java
+
+
 ### Terminology
 + Space complexity: memory needed at *any* point in time. Unlike time complexity this is not the total/cumulative used by the algorithm.
   + Usually we care for *auxiliary space* complexity which means to ignore input storage (otherwise we would start with O(n) and upwards) [SO question](https://stackoverflow.com/questions/30220305/how-to-calculate-the-space-complexity-of-function)
@@ -6,38 +24,44 @@
   + Recursion depth matters because variables stay in the stack. Specifically the space used is equal to "the deepest level of recursion" multiplied by "the size of the stack frame for each level". Note that for example in the fibonacci algorithm (`return fibonacci(i-1) + fibonaci(i-2);`) the first part is evaluated completely before the second, therefore we never get deeper than n levels of recursion.
 + Cases can be worst, average or best.
 + Analysis can be asymptotic or amortized.  
-  + Complexity f(n) is usually expressed in terms of big O-notation (upper bound - takes at most f(n) time/space). Other notations are lower bound Ω, tight-bound Θ (both lower and upper bound - takes at least and at most f(n) time/space) or little-o (stricter than big-O). From smaller to bigger:    
-    + O(1) - constant, O(logn) - logarithmic, O(sqrt(n)) - or generally n^d where 0<d<1, less common, O(n) - linear, nlogn - quasilinear, n^2 - quadratic, n^3 - cubic, n^k - polynomial, 2^n - exponential, n! - factorial
-  + Amortized: is the "average" cost of an operation because worst case can be too pessimistic, for more see [amortized analysis wiki](https://en.wikipedia.org/wiki/Amortized_analysis). An example for datastructures can be the cost of resizing an array list, a cost that is taken once every n insertions which could be considered amortized O(1) among all insertions.    
-
-
-### Techniques
-TODO: gather all from CtCI and chapter 11 of Algorithms in a nutshell
-+ Sorting in the beginning is a technique.
-+ Time-space-tradeoff: you can improve time by using up more space.
-+ [Recursive solutions can be expressed iteratively](https://stackoverflow.com/questions/2093618/can-all-iterative-algorithms-be-expressed-recursively) and vice versa: if <-> while
-+ Runner up pointer technique.
-+ Parallelism: https://github.com/heineman/algorithms-nutshell-2ed/blob/master/JavaCode/src/algs/model/array/MultiThreadQuickSort.java
+  + Complexity f(n) is usually expressed in terms of big O-notation (upper bound - takes at most f(n) time/space). Other notations are lower bound Ω, tight-bound Θ (both lower and upper bound - takes at least and at most f(n) time/space) or little-o (stricter than big-O). From smaller to bigger - O(1): constant, O(logn): logarithmic, O(sqrt(n)) or generally n^d where 0<d<1: less common, O(n): linear, O(nlogn): quasilinear, O(n^2): quadratic, O(n^3): cubic, O(n^k): polynomial, O(2^n): exponential, O(n!): factorial
+  + Amortized: is the "average" cost over a number of operations because worst case can be too pessimistic, for more see [amortized analysis wiki](https://en.wikipedia.org/wiki/Amortized_analysis). An example for datastructures can be the cost of resizing an array list, a cost that is taken once every n insertions which could be considered amortized O(1) among all insertions.    
 
 
 ## Data structures
-+ Operations we are looking at are:  
-  + insertion (ends and middle)
-  + deletion (is it different from insertion?)
-  + lookup/search
-  + existence (is there at all?)?
-  + resizing?
-  + access (knowing the index)
+- Primitive types
+- Arrays/Strings
+- Lists
+- Stacks and queues
+- Heap: main property parent nodes are smaller or greater than children
+- Trees: Binary and Binary Search Tree
+- Hash Table 
+- Graphs
 
-### Abstract Data Types (ADT)
-Things to consider: underflow, overflow, permits null items?
+|name|properties|Java|custom implementation|
+|-|-|-|-|
+|arrays||Arrays, ArrayList||
+|strings||String, StringBuilder/Buffer||
+|stack| LIFO, think of a stack of plates| Deque interface is preferred over Stack|single list (pointing down/back) or (resizing) Array|
+|queue| FIFO| LinkedList or other implementations of Queue interface | implementation again with single list|
 
-+ Bag: unordered set, can contain duplicates
-+ Set: unordered, no duplicates
-+ Stack: LIFO, like a stack of plates, implementation using singly LinkedList (pointing down/back) or (resizing) Array
-+ Queue: FIFO, implementation again with singly LinkedList
-+ Heap: main property parent nodes are smaller or greater than children
-+ Map: key -> value
+### How to choosing an appropriate structure
+Check what operations/complexity we are requiring  
++ insertion (at both ends and middle)
++ deletion (is it different from insertion?)
++ lookup/search
++ existence (is there at all?)?
++ resizing?
++ access (knowing the index)
+
+### Abstract Data Types
+Some more Data types for reference
+
+|name|properties|Java|custom implementation|
+|-|-|-|-|
+|bag|unordered set, can contain duplicates | - | |
+|set|unordered, no duplicates|Set||
+[etc](https://en.wikipedia.org/wiki/Abstract_data_type). Things to consider when implementing one or choosing: underflow, overflow, permits null items?
 
 ### Trees & Graphs - WIP
 + Trees are special cases of graphs.
