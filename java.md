@@ -73,3 +73,7 @@ The SDK contains besides the JDK also an application server (eg Tomcat) plus oth
 [http://www.devsniper.com/ubuntu-12-04-install-sun-jdk-6-7/ the guide I used in Doodle while in Ubuntu]
 
 Java 9 features: https://www.pluralsight.com/blog/software-development/java-9-new-features
++ Modules for dependency management (project jigsaw)
++ Jshell
++ HTTP2
+
