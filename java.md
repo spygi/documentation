@@ -48,18 +48,6 @@ Static keyword: : For class attributes and methods. : Static fields are initiali
 Java is pass by value: : for primitives this is self-proven : for objects: the reference is passed as a value. Therefore you can change inner objects that the argument contains but not the original object itself.
 A consequence is: : final List: allows modifying elements but compile-time error if modifying the List itself, Collections.unmodifiable offer truly immutable Lists.
 
-## Concurrency
-+ Thread creation/running: by extending Thread or Thread(Runnable), ExecutorService, ForkJoinPool, Parallel Streams
-+ Thread safety  
-  + volatile variables [source](http://www.javamex.com/tutorials/synchronization_volatile.shtml): The value of this variable will never be cached thread-locally: all reads and writes will go straight to "main memory"; : Access to the variable acts as though it is enclosed in a synchronized block, synchronized on itself. [Note 1](https://stackoverflow.com/a/3038233/2259743): volatile ensures atomicity of double & longs writes and reads even though they (without volatile) happen in 2 operations. Note 2: `myVolatile++;` is a compound action therefore not thread safe.  
-    + [volatile static makes sense](https://stackoverflow.com/questions/2423622/volatile-vs-static-in-java)
-  + synchronized: can be on a method (locking on this) or block of code
-  Difference? [Synchronized methods seem to generate less bytecode](http://www.ibm.com/developerworks/library/j-5things15/) therefore more efficient? [However](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html): when one thread is executing a synchronized method for an object, all other threads that invoke synchronized methods for the same object block (suspend execution) until the first thread is done with the object. I guess synchronized static methods can be heavily penaltied by that? Visibility: when a synchronized method exits, it automatically establishes a happens-before relationship with any subsequent invocation of a synchronized method for the same object.  
-    + Locks are re-entrant meaning the thread that already has the lock can re-enter the synchronized code (but not another thread).
-  + AtomicReferenceFieldUpdater->VarHandles (in Java 9)
-  + java.util.concurrent.atomic for AtomicInteger etc.
-  + ThreadLocal is in a sense the opposite of volatile: each thread maintains a local
-
 ## Interview Questions
 [http://norvig.com/java-iaq.html iaq]
 [http://www.allapplabs.com/interview_questions/java_interview_questions.htm#q3 interview questions]
