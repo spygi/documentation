@@ -1,0 +1,2 @@
+- [Egghead tutorial](https://egghead.io/courses/getting-started-with-redux)
+- [Dataflow](https://redux.js.org/basics/dataflow)
