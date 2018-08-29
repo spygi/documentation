@@ -3,7 +3,7 @@
 - [Dataflow](https://redux.js.org/basics/dataflow)
 
 ## Reactive
-- Reference [learnRxJS](https://www.learnrxjs.io) with links to official docs
+- Reference [learnRxJS](https://www.learnrxjs.io) with links to official docs or this if [marbles](http://rxmarbles.com) is your thing
 - [Operators index](http://reactivex.io/documentation/operators.html): at least some examples in rxjs are using the 4 syntax
 - Version 6 main differences: pipe instead of chaining
 
