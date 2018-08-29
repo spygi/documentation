@@ -7,7 +7,6 @@
 - [Operators index](http://reactivex.io/documentation/operators.html): at least some examples in rxjs are using the 4 syntax
 - Version 6 main differences: pipe instead of chaining
 
-
 ### Intro
 - [The missing intro](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754): Again using version 4
 - [Intro rxjs 4](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/creating.md)
@@ -24,3 +23,10 @@
   - And many overloads of the methods
   - Having the same methods on both Observable and instances of it doesn't help either
 - Documentation/tutorials lagging behind current versions
+- Not sure yet how big the advantage is
+
+## Random
+https://angular.io/guide/styleguide#shared-feature-module
+https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407
+https://github.com/ngrx/platform/blob/master/docs/store/selectors.md
+https://medium.com/@m3po22/stop-using-ngrx-effects-for-that-a6ccfe186399
