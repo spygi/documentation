@@ -2,7 +2,7 @@
 - [Egghead tutorial](https://egghead.io/courses/getting-started-with-redux)
 - [Dataflow](https://redux.js.org/basics/dataflow)
 
-## Reactive
+## ReactiveX
 - Reference [learnRxJS](https://www.learnrxjs.io) with links to official docs or this if [marbles](http://rxmarbles.com) is your thing
 - [Operators index](http://reactivex.io/documentation/operators.html): at least some examples in rxjs are using the 4 syntax
 - Version 6 main differences: pipe instead of chaining
@@ -15,14 +15,19 @@
 ### More
 - [Don't unsubscribe](https://medium.com/@benlesh/rxjs-dont-unsubscribe-6753ed4fda87)
 - [10 functions with examples](https://www.sitepoint.com/rxjs-functions-with-examples/)
-
+- [Observables and the context around](https://github.com/ReactiveX/rxjs/blob/master/doc/observable.md)
 
 ### Thoughts
 - Big API surface: map, switchMap, flatMap etc..
   - Which gets worse by having aliases eg. flatMap === mergeMap
   - And many overloads of the methods
-  - Having the same methods on both Observable and instances of it doesn't help either
+  - Having (almost) the same methods on both Observable(static) and instances, doesn't help either
 - Documentation/tutorials lagging behind current versions
+  - Or lists twice the same methods e.g. [http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html]()
+- Which one is the official documentation anyway? 
+  - From official site http://reactivex.io/documentation/observable.html? No, version 4
+  - Github https://github.com/ReactiveX/rxjs/tree/master/doc to a newer version https://rxjs-dev.firebaseapp.com/ ? 
+  - http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html ?
 - Not sure yet how big the advantage is
 
 ## Random
