@@ -21,12 +21,12 @@
 - Big API surface: map, switchMap, flatMap etc..
   - Which gets worse by having aliases eg. flatMap === mergeMap
   - And many overloads of the methods
-  - Having (almost) the same methods on both Observable(static) and instances, doesn't help either
+  - Having (almost but not quite) the same methods on both Observable(static) and instances, doesn't help either
 - Documentation/tutorials lagging behind current versions
-  - Or lists twice the same methods e.g. [http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html]()
+  - Or lists twice the same methods e.g. [here](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html)
 - Which one is the official documentation anyway? 
   - From official site http://reactivex.io/documentation/observable.html? No, version 4
-  - Github https://github.com/ReactiveX/rxjs/tree/master/doc to a newer version https://rxjs-dev.firebaseapp.com/ ? 
+  - Github https://github.com/ReactiveX/rxjs/tree/master/doc points to a newer version https://rxjs-dev.firebaseapp.com/ ? 
   - http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html ?
 - Not sure yet how big the advantage is
 
