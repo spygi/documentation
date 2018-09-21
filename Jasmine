@@ -1,0 +1,17 @@
+annotated code: https://jasmine.github.io/2.0/introduction.html
+docs: https://jasmine.github.io/api/edge/global
+
+Mocks are called spies.
+
+describe('OnlineOfflineService', () => {
+  // beforeEach etc
+
+  // more describes
+  (f/x)it('OnlineOfflineService', () => {
+    Global method expect(): returns a Matcher
+    
+    spyOn(obj, 'methodName'): returns a Spy on an obj Spy class and.returnValue
+    if you don't have an obj you can try jasmine.createSpy and createSpyObj?
+    
+  });
+});
