@@ -17,20 +17,6 @@
 - [10 functions with examples](https://www.sitepoint.com/rxjs-functions-with-examples/)
 - [Observables and the context around](https://github.com/ReactiveX/rxjs/blob/master/doc/observable.md)
 
-### Thoughts
-- Big API surface: map, switchMap, flatMap etc..
-  - Which gets worse by having aliases eg. flatMap == mergeMap or subscribe == forEach
-  - And many overloads of the methods
-  - Having (almost but not quite) the same methods on both Observable(static) and instances, doesn't help either
-- Documentation/tutorials lagging behind current versions
-  - Or lists twice the same methods e.g. [here](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html)
-  - Pretty difficult to read with all the generics there
-- Which one is the official documentation anyway? 
-  - From official site http://reactivex.io/documentation/observable.html? No, version 4
-  - Github https://github.com/ReactiveX/rxjs/tree/master/doc points to a newer version https://rxjs-dev.firebaseapp.com/ ? 
-  - http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html ?
-- Not sure yet how big the advantage is
-
 ## Random
 https://angular.io/guide/styleguide#shared-feature-module
 https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407
