@@ -1,0 +1,29 @@
+## @NgModule (app.module.ts)
+- Declarations: your components, directives and pipes
+- Imports: other NgModules that this particular module needs to function properly
+- Providers: the service providers, they are available app-wide. You can scope them when using feature modules and lazy loading
+- Bootstrap: creates the component(s) listed in the bootstrap array and inserts each one into the browser DOM.
+- Exports
+
+## @Component
+Every component must be declared in exactly one NgModule: when you need it elsewhere, import the module that has the declarable you need in it.
+[] input
+() output
+[(ngModel)]: 2-way binding
+
+## Services
+To access data
+@Injectable: providedIn = 'root' the same as in having it in app.module's providers
+
+## Routing
+A module. Import it in app.module. 
+Have an array of routes to Components.
+routerLink to the route.
+Make a component routable by injecting ActivatedRoute and Location (if you need a back button)
+
+The method is called forRoot() because you configure the router at the application's root level
+The RouterOutlet is one of the router directives that became available to the AppComponent because AppModule imports AppRoutingModule which exported RouterModule.
+
+## Others
+- Pipes
+- Directives: Attribute Directives and Structural Directives
