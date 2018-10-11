@@ -3,27 +3,33 @@
 - Imports: other NgModules that this particular module needs to function properly
 - Providers: the service providers, they are available app-wide. You can scope them when using feature modules and lazy loading
 - Bootstrap: creates the component(s) listed in the bootstrap array and inserts each one into the browser DOM.
-- Exports
+- Exports: what this module exports to other modules that might import it.
 
 ## @Component
 Every component must be declared in exactly one NgModule: when you need it elsewhere, import the module that has the declarable you need in it.
 [] input
 () output
-[(ngModel)]: 2-way binding
+[(ngModel)]: 2-way binding (model <-> view)
+Event binding lets your app respond to user input in the target environment by updating your application data.
+Property binding lets you interpolate values that are computed from your application data into the HTML.
 
 ## Services
-To access data
+To access data, singleton
 @Injectable: providedIn = 'root' the same as in having it in app.module's providers
 
 ## Routing
-A module. Import it in app.module. 
+A module. (It has a rooting service-singleton) Import it in app.module. 
 Have an array of routes to Components.
 routerLink to the route.
 Make a component routable by injecting ActivatedRoute and Location (if you need a back button)
 
-The method is called forRoot() because you configure the router at the application's root level
-The RouterOutlet is one of the router directives that became available to the AppComponent because AppModule imports AppRoutingModule which exported RouterModule.
+Since the router deals with a global shared resource--location, we cannot have more than one router service active.
+`forRoot` creates a module that contains all the directives, the given routes, and the router service itself. 
+`forChild` creates a module that contains all the directives and the given routes, but does not include the router service.
 
+## i18n
+Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
+ 
 ## Others
 - Pipes
 - Directives: Attribute Directives and Structural Directives
