@@ -22,3 +22,7 @@ https://angular.io/guide/styleguide#shared-feature-module
 https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407
 https://github.com/ngrx/platform/blob/master/docs/store/selectors.md
 https://medium.com/@m3po22/stop-using-ngrx-effects-for-that-a6ccfe186399
+
+
+Handling errors in effects
+https://medium.com/city-pantry/handling-errors-in-ngrx-effects-a95d918490d9
