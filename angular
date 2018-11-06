@@ -33,3 +33,8 @@ Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
 ## Others
 - Pipes
 - Directives: Attribute Directives and Structural Directives
+
+## Good reads 
+Styleguide 
+https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7
+Why effects: https://medium.com/city-pantry/handling-errors-in-ngrx-effects-a95d918490d9
