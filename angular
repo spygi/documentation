@@ -38,3 +38,20 @@ Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
 Styleguide 
 https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7
 Why effects: https://medium.com/city-pantry/handling-errors-in-ngrx-effects-a95d918490d9
+
+##
+ng uses angular.json: index.html and main.ts TODO: Find where.
+- main.ts bootstraps app.module.ts.
+- index.html includes custom app tag
+- app.module.ts declares (and bootstraps?) app.component TODO: what is declaration and bootstrap
+- component.ts has that custom app tag as a selector. it also has its own html that is "injected" into the tag.
+
+Bundle for production 
+
+Component interaction parent-child:
+- @Input/Output are both defined at the child
+- [] for passing input data (parent to child), () for getting events from children 
+TODO: what is the difference with model-view changes?
+
+
+
