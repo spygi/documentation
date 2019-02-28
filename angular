@@ -1,9 +1,20 @@
+## Glossary
+Modules
+Components
+Services
+
+
 ## @NgModule (app.module.ts)
-- Declarations: your components, directives and pipes
+Every app has at least 1 module. Differences with JS modules.
+Feature modules are NgModules for the purpose of organizing code. The structure of an NgModule is the same whether it is a root module or a feature module.
+
+- Declarations: your components, directives and pipes. Declarables are the only classes that matter to the Angular compiler. Sources: https://angular.io/guide/ngmodule-vs-jsmodule
 - Imports: other NgModules that this particular module needs to function properly
 - Providers: the service providers, they are available app-wide. You can scope them when using feature modules and lazy loading
 - Bootstrap: creates the component(s) listed in the bootstrap array and inserts each one into the browser DOM.
 - Exports: what this module exports to other modules that might import it.
+
+
 
 ## @Component
 Every component must be declared in exactly one NgModule: when you need it elsewhere, import the module that has the declarable you need in it.
@@ -27,6 +38,9 @@ Since the router deals with a global shared resource--location, we cannot have m
 `forRoot` creates a module that contains all the directives, the given routes, and the router service itself. 
 `forChild` creates a module that contains all the directives and the given routes, but does not include the router service.
 
+TODO: use rooting without a separate module
+TODO: typesafety in lazy loaded modules?
+
 ## i18n
 Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
  
@@ -40,17 +54,18 @@ https://blog.angularindepth.com/ngrx-tips-tricks-69feb20a42a7
 Why effects: https://medium.com/city-pantry/handling-errors-in-ngrx-effects-a95d918490d9
 
 ##
-ng uses angular.json: index.html and main.ts TODO: Find where.
-- main.ts bootstraps app.module.ts.
+- ng uses angular.json not just to make the files but also to serve/build. TODO: Find where in code. In angular.json index.html and main.ts are defined. 
+In TAWS we included main.js as script.  
 - index.html includes custom app tag
-- app.module.ts declares (and bootstraps?) app.component TODO: what is declaration and bootstrap
-- component.ts has that custom app tag as a selector. it also has its own html that is "injected" into the tag.
+- main.ts bootstraps app.module.ts.
+- app.module.ts (declares and) bootstraps app.component into the DOM
+- app.component.ts has that custom app tag as a selector. it also has its own html that is "injected" into the tag.
 
-Bundle for production 
+TODO: Bundle for production 
 
 Component interaction parent-child:
 - @Input/Output are both defined at the child
-- [] for passing input data (parent to child), () for getting events from children 
+- Parent passes [data] to the child, gets (events) from children 
 TODO: what is the difference with model-view changes?
 
 
