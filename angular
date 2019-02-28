@@ -40,6 +40,7 @@ Since the router deals with a global shared resource--location, we cannot have m
 
 TODO: use rooting without a separate module
 TODO: typesafety in lazy loaded modules?
+TODO: router outlet for the whole page?
 
 ## i18n
 Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
