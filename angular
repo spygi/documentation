@@ -8,8 +8,8 @@ Services
 Every app has at least 1 module. Differences with JS modules.
 Feature modules are NgModules for the purpose of organizing code. The structure of an NgModule is the same whether it is a root module or a feature module.
 
-- Declarations: your components, directives and pipes. Declarables are the only classes that matter to the Angular compiler. Sources: https://angular.io/guide/ngmodule-vs-jsmodule
-- Imports: other NgModules that this particular module needs to function properly
+- Declarations: your components, directives and pipes (not modules).
+- Imports: other _NgModules_ that this particular module needs to function properly
 - Providers: the service providers, they are available app-wide. You can scope them when using feature modules and lazy loading
 - Bootstrap: creates the component(s) listed in the bootstrap array and inserts each one into the browser DOM.
 - Exports: what this module exports to other modules that might import it.
@@ -25,8 +25,11 @@ Event binding lets your app respond to user input in the target environment by u
 Property binding lets you interpolate values that are computed from your application data into the HTML.
 
 ## Services
-To access data, singleton
-@Injectable: providedIn = 'root' the same as in having it in app.module's providers
+To access data, usually a singleton
+@Injectable: providedIn = 'root' the same as in having it in app.module's providers but better because it is tree shakeable.
+
+How does it work with lazy loading though? It works https://stackoverflow.com/a/53010605/2259743
+The advantage of providers = [] is if you don't want a service to be global (across the whole app)
 
 ## Routing
 A module. (It has a rooting service-singleton) Import it in app.module. 
@@ -38,9 +41,16 @@ Since the router deals with a global shared resource--location, we cannot have m
 `forRoot` creates a module that contains all the directives, the given routes, and the router service itself. 
 `forChild` creates a module that contains all the directives and the given routes, but does not include the router service.
 
-TODO: use rooting without a separate module
+first match wins strategy
+defined in a separate module or not
+
 TODO: typesafety in lazy loaded modules?
-TODO: router outlet for the whole page?
+Pattern for navigation to other pages: have router-outlet surround the whole page?
+TODO: https://medium.com/@shairez/angular-routing-a-better-pattern-for-large-scale-apps-f2890c952a18
+
+## TODO Forms 
+
+## TODO Template language
 
 ## i18n
 Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
