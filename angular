@@ -2,10 +2,11 @@
 Modules
 Components
 Services
+Directive
 
 
 ## @NgModule (app.module.ts)
-Every app has at least 1 module. Differences with JS modules.
+Every app has at least 1 module. An Angular module is not a JS module.
 Feature modules are NgModules for the purpose of organizing code. The structure of an NgModule is the same whether it is a root module or a feature module.
 
 - Declarations: your components, directives and pipes (not modules).
@@ -24,12 +25,14 @@ Every component must be declared in exactly one NgModule: when you need it elsew
 Event binding lets your app respond to user input in the target environment by updating your application data.
 Property binding lets you interpolate values that are computed from your application data into the HTML.
 
+
 ## Services
 To access data, usually a singleton
 @Injectable: providedIn = 'root' the same as in having it in app.module's providers but better because it is tree shakeable.
 
 How does it work with lazy loading though? It works https://stackoverflow.com/a/53010605/2259743
 The advantage of providers = [] is if you don't want a service to be global (across the whole app)
+
 
 ## Routing
 A module. (It has a rooting service-singleton) Import it in app.module. 
@@ -50,8 +53,28 @@ TODO: https://medium.com/@shairez/angular-routing-a-better-pattern-for-large-sca
 
 ## TODO Forms 
 
-## TODO Template language
+## Template syntax
+The view of MVC.
+A HTML subset with additions.
 
+Interpolation
+<p>{{title}}</p>
+<div><img src="{{itemImageUrl}}"></div>
+Angular evaluates all expressions in double curly braces, converts the expression results to strings, and links them with neighboring literal strings. Finally, it assigns this composite interpolated result to an element or directive property.
+
+Expression context: template variables, the directive's context object (if it has one), and the component's members in decreasing priority.
+
+Template expression {{ }} vs template statement []="": those have different parsers and are not strictly JS, for example ! checks for null and undefined not empty string
+But can be used interchangeably? 
+<p><img src="{{heroImageUrl}}"> is the <i>interpolated</i> image.</p>
+<p><img [src]="heroImageUrl"> is the <i>property bound</i> image.</p>
+
+View - model binding
+model -> view:  []
+view -> model: ()
+2-way: [()]
+
+Works with DOM properties (current value) not HTML attributes (initial value) except when using [attr.hello]="world"
 ## i18n
 Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
  
