@@ -54,13 +54,13 @@ TODO: https://medium.com/@shairez/angular-routing-a-better-pattern-for-large-sca
 ## TODO Forms 
 
 ## Template syntax
-The view of MVC.
-A HTML subset with additions.
+The "view" in MVC: subset of HTML with additions.
 
 Interpolation
 <p>{{title}}</p>
 <div><img src="{{itemImageUrl}}"></div>
-Angular evaluates all expressions in double curly braces, converts the expression results to strings, and links them with neighboring literal strings. Finally, it assigns this composite interpolated result to an element or directive property.
+Angular evaluates all expressions in double curly braces, converts the expression results to strings
+and links them with neighboring literal strings. Finally, it assigns this composite interpolated result to an element or directive property.
 
 Expression context: template variables, the directive's context object (if it has one), and the component's members in decreasing priority.
 
@@ -71,10 +71,26 @@ But can be used interchangeably?
 
 View - model binding
 model -> view:  []
-view -> model: ()
+view -> model: () event
 2-way: [()]
 
 Works with DOM properties (current value) not HTML attributes (initial value) except when using [attr.hello]="world"
+
+TODO: functions in templates, get/set
+
+## Change detection
+Runs twice in dev, once in prod.
+Default: runs on all components. Evaluates new values and compares against previous to determine if something changed.
+OnPush: runs on Input properties if the reference of a property changes or if they are | async *exception is for queries/contentchilds etc, 
+a DOM event is triggered on the component or its children, or change detection is explicitly called
+
+https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4
+Try this to see if async "bypasses OnPush": https://medium.com/@manueledones/great-article-as-usual-4dee27e16df6
+
+## The jquery way
+ViewChildren and ContentChildren: both return a QueryList that can be iterated. ContentChildren returns only ng-content elements.
+https://netbasal.com/understanding-viewchildren-contentchildren-and-querylist-in-angular-896b0c689f6e
+
 ## i18n
 Provider in app.module { provide: LOCALE_ID, useValue: 'fr' }
  
