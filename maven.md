@@ -25,5 +25,6 @@ To check which goals are in a phase mvn help:describe -Dcmd=PHASE or this mvn fr
 ## POM
 [repositories vs distributionmanagement-repositories](https://stackoverflow.com/questions/35317118/repository-tag-under-distributionmanagement-vs-repositories)
 
-children need to know the version of the parent, use ${revision} as [here](https://maven.apache.org/maven-ci-friendly.html#Multi_Module_Setup)
+children need to know the version of the parent, use ${revision} as [here](https://maven.apache.org/maven-ci-friendly.html#Multi_Module_Setup) or use the release:update-versions plugin `mvn release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=1.6.1`
 
+pluginManagement provides defaults plugins for children
