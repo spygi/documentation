@@ -20,3 +20,10 @@ There are 2 ways to add goals to phases:
 - By adding plugins and their goals
 
 To check which goals are in a phase mvn help:describe -Dcmd=PHASE or this mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list|-plugin|-phase, 
+
+
+## POM
+[repositories vs distributionmanagement-repositories](https://stackoverflow.com/questions/35317118/repository-tag-under-distributionmanagement-vs-repositories)
+
+children need to know the version of the parent, use ${revision} as [here](https://maven.apache.org/maven-ci-friendly.html#Multi_Module_Setup)
+
